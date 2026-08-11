@@ -1,0 +1,23 @@
+{
+  "name": "invoicegeneratorapi",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --watch src/app.ts",
+    "start": "bun src/app.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "handlebars": "^4.7.9",
+    "puppeteer": "^25.5.0"
+  }
+}
