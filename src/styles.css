@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@source "../templates";
+
+@page {
+  margin: 0;
+}

@@ -4,20 +4,27 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "build:css": "postcss src/styles.css -o generated/styles.css",
+    "predev": "npm run build:css",
     "dev": "bun --watch src/app.ts",
+    "prestart": "npm run build:css",
     "start": "bun src/app.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.6",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "postcss-cli": "^11.0.1"
   },
   "peerDependencies": {
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "express": "^5.2.1",
     "handlebars": "^4.7.9",
-    "puppeteer": "^25.5.0"
+    "postcss": "^8.5.28",
+    "puppeteer": "^25.5.0",
+    "tailwindcss": "^4.3.3"
   }
 }

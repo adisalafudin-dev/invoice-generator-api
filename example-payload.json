@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "invoice_number": "INV-DEMO-001",
+    "issue_date": "2026-09-03",
+    "due_date": "2026-09-17"
+  },
+  "sender": {
+    "company_name": "PT Maju Bersama",
+    "address": "Jl. Sudirman No. 10, Jakarta"
+  },
+  "customer": {
+    "company_name": "CV Klien Sejahtera",
+    "address": "Jl. Asia Afrika No. 8, Bandung"
+  },
+  "items": [
+    {
+      "description": "Implementasi API Invoice",
+      "quantity": 1,
+      "unit_price": 2500000
+    },
+    {
+      "description": "Dukungan teknis bulanan",
+      "quantity": 2,
+      "unit_price": 750000
+    }
+  ],
+  "modifiers": {
+    "tax_rate": 0.11,
+    "discount": 100000
+  }
+}

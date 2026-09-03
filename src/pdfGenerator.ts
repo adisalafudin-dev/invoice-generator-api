@@ -96,6 +96,7 @@ function calculateInvoice(payload: InvoicePayload) {
 // ===== Template Compilation =====
 
 let compiledTemplate: HandlebarsTemplateDelegate | null = null;
+let compiledStyles: string | null = null;
 
 function getTemplate(): HandlebarsTemplateDelegate {
   if (compiledTemplate) return compiledTemplate;
@@ -104,6 +105,14 @@ function getTemplate(): HandlebarsTemplateDelegate {
   const source = readFileSync(templatePath, "utf-8");
   compiledTemplate = Handlebars.compile(source);
   return compiledTemplate;
+}
+
+function getStyles(): string {
+  if (compiledStyles) return compiledStyles;
+
+  const stylesPath = path.join(process.cwd(), "generated", "styles.css");
+  compiledStyles = readFileSync(stylesPath, "utf-8");
+  return compiledStyles;
 }
 
 // ===== Puppeteer Browser (reusable instance) =====
@@ -143,6 +152,7 @@ export async function generateInvoicePdf(
 
   const template = getTemplate();
   const html = template({
+    styles: getStyles(),
     metadata: payload.metadata,
     sender: payload.sender,
     customer: payload.customer,
@@ -165,3 +175,5 @@ export async function generateInvoicePdf(
     await page.close(); // WAJIB: tutup page walau error, cegah memory leak
   }
 }
+
+export { calculateInvoice }; // export untuk keperluan unit test

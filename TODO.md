@@ -2,6 +2,10 @@
 
 Roadmap pengembangan setelah MVP (Fase 1-4) selesai.
 
+## Styling
+
+- [x] \*\* Replace CSS Vanilla dengan Tailwind CSS saja
+
 ## Prioritas Tinggi — Mengatasi Limitasi Arsitektur Sinkron
 
 - [ ] **Async job queue (BullMQ + Redis)**

@@ -16,6 +16,7 @@ API sederhana untuk generate invoice PDF secara real-time. Kirim data invoice da
 - **Framework:** [Express.js](https://expressjs.com) + TypeScript
 - **PDF Engine:** [Puppeteer](https://pptr.dev)
 - **Template Engine:** [Handlebars](https://handlebarsjs.com)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com) via PostCSS
 
 ## Fitur
 
@@ -56,6 +57,12 @@ bun run dev
 
 # Production
 bun run start
+```
+
+CSS Tailwind dikompilasi otomatis sebelum server development atau production dijalankan. Untuk menjalankannya secara manual:
+
+```bash
+bun run build:css
 ```
 
 Server berjalan di `http://localhost:3000` secara default. Ubah lewat environment variable `PORT` jika perlu.
